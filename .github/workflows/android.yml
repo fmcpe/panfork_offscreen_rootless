@@ -47,6 +47,7 @@ jobs:
             --prefix=/tmp/pan \
             -O3 \
             -march=native \
+            -Dtools=panfrost \
             --cross-file "build-crossfile" \
             -Dplatforms=android \
             -Dplatform-sdk-version=33 \
