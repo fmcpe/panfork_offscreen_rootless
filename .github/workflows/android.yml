@@ -45,8 +45,6 @@ jobs:
           envsubst <android-${{matrix.arch}} >build-crossfile
           meson setup "build-android" \
             --prefix=/tmp/pan \
-            -Dc_args=-O3 \
-            -Dc_args=-march=native \
             -Dtools=panfrost \
             --cross-file "build-crossfile" \
             -Dplatforms=android \
@@ -54,7 +52,7 @@ jobs:
             -Dandroid-stub=true \
             -Dllvm=disabled \
             -Dxlib-lease=disabled \
-            -Degl=enabled \
+            -Degl=disabled \
             -Dgbm=disabled \
             -Dglx=disabled \
             -Dopengl=true \
