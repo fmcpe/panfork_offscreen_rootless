@@ -30,7 +30,15 @@ jobs:
           cd drm
           meson setup "build-android" \
             --prefix=/tmp/drm-static \
-            --cross-file "../build-crossfile-drm"
+            --cross-file "../build-crossfile-drm" \
+            -Dintel=disabled \
+            -Dradeon=disabled \
+            -Damdgpu=disabled \
+            -Dnouveau=disabled \
+            -Dvmwgfx=disabled \
+            -Dfreedreno=disabled \
+            -Dvc4=disabled \
+            -Detnaviv=disabled
           ninja -C "build-android" install
           cd ..
           envsubst <android-${{matrix.arch}} >build-crossfile
