@@ -48,7 +48,6 @@ jobs:
             --cross-file "build-crossfile" \
             -Dplatforms=android \
             -Dplatform-sdk-version=34 \
-            -Dtools=drm-shim \
             -Dllvm=disabled \
             -Dandroid-stub=true \
             -Dopengl=true \
